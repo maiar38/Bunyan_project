@@ -1,5 +1,5 @@
 import logo from '../../../assets/axis-logo.png'
-import flag from '../../../assets/flag.png'
+import notification from '../../../assets/notification-logo.png'
 import Style from './navbar.module.css'
 export default function Navbar() {
 
@@ -10,30 +10,23 @@ export default function Navbar() {
                     <img className={Style.navLogo} src={logo} alt="logo" />
                 </div>
                 
-                    <ul className={`d-flex align-items-center m-0 ${Style.navlinks}`}>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Developers</a></li>
+                    
+                      <div>
+                    <img src={notification} alt="notifiaction"  className={Style.notification}/>
+             
+                        
+                     <select   className={Style.select} name="show" >
+                        <option>Super Admin</option>
 
-                        <li><a href="#">Projects</a></li>
+                            <option >Admin</option>
+                            
 
-                        <li><a href="#">Project Compare</a></li>
-
-                        <li><a href="#">Wishlists</a></li> 
-
-                        <li><select   className={Style.select} name="show" >
-                        <option>Show More</option>
-
-                            <option >item1</option>
-                            <option >item1</option>
-
-                            </select></li>
+                    </select>
  
-                    </ul>
-                  
+                
 
-                <div className={Style.lang}>
-            <img src={flag} alt="flag"  className={Style.flag} />
-             <span>EN / AR</span>
+                
+            
               </div>
                 
 

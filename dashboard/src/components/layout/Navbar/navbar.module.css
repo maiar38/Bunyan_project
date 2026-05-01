@@ -3,21 +3,7 @@
     height:180px;
 }
 
-.navlinks {
-    list-style: none;
-    gap: 20px;
-}
 
-.navlinks li a {
-    text-decoration: none;
-    color: #00315E;
-    font-weight: 500;
-   
-}
-.navlinks li a:hover {
-    color: #4FB7B3;
-    text-decoration: underline;
-}
 .select {
   background: transparent;
   border: none;
@@ -25,21 +11,10 @@
   font-size: 17px;
   outline: none;
   font-weight: 500;
+
+}
+.notification{
+  margin-right: 15px ;
 }
 
-.lang {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  font-size: 17px;
-  padding: 6px 10px;
-  margin-right: 10px;
-}
 
-.flag {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%; 
-  object-fit: cover;
-}
