@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Navbar from './components/layout/navbar/navbar'
+import "./App.css";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
- 
-
   return (
     <>
-      <Navbar/>
+      <Dashboard />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
