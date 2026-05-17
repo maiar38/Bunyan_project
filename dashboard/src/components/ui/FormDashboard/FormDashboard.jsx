@@ -1,26 +1,55 @@
-import React from 'react'
+import React, { useState } from "react";
 
-function FormDashboard() {
+function FormDashboard({ setDraftPage, page }) {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const updated = {
+      ...formData,
+      [e.target.name]: e.target.value,
+    };
+
+    setFormData(updated);
+
+    const hasValue = Object.values(updated).some(
+      (val) => val.trim() !== ""
+    );
+
+    if (hasValue) {
+      setDraftPage(page); 
+    } else {
+      setDraftPage(""); 
+    }
+  };
+
   return (
-    <div>
-      <form>
-  <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div classNameName="mb-3">
-    <label for="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
-</form>
-    </div>
-  )
+    <form>
+      <div className="mb-3">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          className="form-control"
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          className="form-control"
+          onChange={handleChange}
+        />
+      </div>
+
+      <button className="btn btn-primary">Submit</button>
+    </form>
+  );
 }
 
-export default FormDashboard
+export default FormDashboard;
